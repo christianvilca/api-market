@@ -6,6 +6,9 @@ import java.util.Optional;
 import com.christian.market.persistence.crud.ProductoCrudRepository;
 import com.christian.market.persistence.entity.Producto;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class ProductoRepository {
   private ProductoCrudRepository productoCrudRepository;
 
@@ -21,4 +24,15 @@ public class ProductoRepository {
     return productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
   }
 
+  public Optional<Producto> getProducto(int idProducto) {
+    return productoCrudRepository.findById(idProducto);
+  }
+
+  public Producto save(Producto producto) {
+    return productoCrudRepository.save(producto);
+  }
+
+  public void delete(int idProducto) {
+    productoCrudRepository.deleteById(idProducto);
+  }
 }

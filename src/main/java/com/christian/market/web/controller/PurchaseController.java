@@ -1,6 +1,7 @@
 package com.christian.market.web.controller;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 import com.christian.market.domain.Purchase;
 import com.christian.market.domain.service.PurchaseService;
@@ -27,8 +28,8 @@ public class PurchaseController {
     return new ResponseEntity<>(purchaseService.getAll(), HttpStatus.OK);
   }
 
-  @GetMapping("/client/{clientId}")
-  public ResponseEntity<List<Purchase>> getByClient(@PathVariable("clientId") String clientId) {
+  @GetMapping("/client/{idClient}")
+  public ResponseEntity<List<Purchase>> getByClient(@PathVariable("idClient") String clientId) {
     return purchaseService.getByClient(clientId)
             .map(purchases -> new ResponseEntity<>(purchases, HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));

@@ -1,7 +1,6 @@
 package com.christian.market.web.controller;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 import com.christian.market.domain.Purchase;
 import com.christian.market.domain.service.PurchaseService;

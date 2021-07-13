@@ -3,10 +3,12 @@ package com.christian.market.web.security;
 import java.util.Date;
 
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+@Component
 public class JWTUtil {
 
   private static final String KEY = "chr!s+!4n";
